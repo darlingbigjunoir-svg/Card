@@ -1,0 +1,177 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #4f46e5, #9333ea);
+  padding: 10px;
+}
+
+.card {
+  width: 320px;
+  height: 500px;
+  margin: 100px auto 0;
+  perspective: 1000px;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.8s ease;
+  transform-style: preserve-3d;
+}
+
+.front {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  position: absolute;
+  backface-visibility: hidden;
+  overflow: hidden;
+  }
+
+.back {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  position: absolute;
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+
+.front {
+  background: url("../images/John.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: white;
+}
+
+.front h2 {
+  font-weight: 1000;
+}
+
+.front p {
+  color: white;
+  font-size: 17px;
+  opacity: 0.9;
+}
+.front button {
+  width: 120px;
+  border: 1px solid blue;
+  background: transparent;
+  border-radius: 50px;
+  padding: 7px 20px;
+  cursor: pointer;
+  margin-top: 20px;
+  color: white;
+  transition: 0.3s;
+}
+.front button:hover {
+  background: #4f46e5;
+}
+
+.back {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 25px;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  backdrop-filter: blur(12px);
+}
+
+.back h1 {
+  font-size: 50px;
+  line-height: 55px;
+  margin-bottom: 10px;
+}
+
+.back h1 span {
+  font-weight: 400;
+}
+
+.back p {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.back p span {
+  font-weight: 600;
+}
+
+.back img {
+  width: 120px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.col {
+  flex: 1;
+  text-align: center;
+  color: rgb(16, 33, 23);
+  font-size: 13px;
+}
+
+.col h2 {
+  font-size: 21px;
+  color: white;
+}
+
+.col::after {
+  content: "";
+  width: 1.5px;
+  height: 21px;
+  background: #7800ad;
+  position: absolute;
+  top: 5px;
+  right: 0;
+}
+
+.col p {
+  margin-top: 5px;
+  color: white;
+}
+.back button {
+  background: #7800ad;
+  color: black;
+  border: 0;
+  outline: 0;
+  padding: 9px 24px;
+  border-radius: 31px;
+  font-size: 15px;
+  margin-right: 14px;
+  box-shadow: 0 8px 10px rgba(120, 0, 173, 0.3);
+}
+.back a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 5px;
+}
+.back a img {
+  width: 50%;
+}
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
