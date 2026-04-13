@@ -175,3 +175,163 @@
 .card:hover .card-inner {
   transform: rotateY(180deg);
 }
+
+/* =============================================
+   RESPONSIVE STYLES — append to style.css
+   ============================================= */
+
+/* Base: ensure container centers content vertically on tall screens */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Card default already 320×500; keep it centered */
+.card {
+  margin: 0 auto;
+}
+
+/* ── Large desktops (≥1200px) ─────────────────── */
+@media (min-width: 1200px) {
+  .card {
+    width: 360px;
+    height: 540px;
+  }
+
+  .back h1 {
+    font-size: 54px;
+    line-height: 60px;
+  }
+}
+
+/* ── Tablets landscape / small desktops (768px – 1199px) ─── */
+@media (max-width: 1199px) and (min-width: 768px) {
+  .card {
+    width: 300px;
+    height: 480px;
+  }
+
+  .back h1 {
+    font-size: 44px;
+    line-height: 50px;
+  }
+
+  .back img {
+    width: 100px;
+  }
+}
+
+/* ── Tablets portrait (600px – 767px) ───────────── */
+@media (max-width: 767px) and (min-width: 600px) {
+  .card {
+    width: 280px;
+    height: 460px;
+  }
+
+  .back h1 {
+    font-size: 38px;
+    line-height: 44px;
+  }
+
+  .back img {
+    width: 90px;
+  }
+
+  .back {
+    padding: 20px;
+  }
+
+  .col h2 {
+    font-size: 18px;
+  }
+}
+
+/* ── Mobile (≤599px) ────────────────────────────── */
+@media (max-width: 599px) {
+  .container {
+    padding: 16px;
+    min-height: 100svh;
+  }
+
+  .card {
+    width: min(290px, 88vw);
+    height: clamp(440px, 80vh, 520px);
+  }
+
+  .back h1 {
+    font-size: 34px;
+    line-height: 40px;
+    margin-bottom: 6px;
+  }
+
+  .back img {
+    width: 80px;
+  }
+
+  .back {
+    padding: 18px;
+  }
+
+  .back p {
+    font-size: 13px;
+  }
+
+  .col h2 {
+    font-size: 17px;
+  }
+
+  .col {
+    font-size: 12px;
+  }
+
+  .back button {
+    padding: 8px 18px;
+    font-size: 14px;
+    margin-right: 10px;
+  }
+
+  .back a {
+    width: 34px;
+    height: 34px;
+  }
+
+  .row {
+    margin-top: 18px;
+  }
+}
+
+/* ── Very small phones (≤360px) ─────────────────── */
+@media (max-width: 360px) {
+  .card {
+    width: 92vw;
+    height: clamp(420px, 85vh, 500px);
+  }
+
+  .back h1 {
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  .back button {
+    padding: 7px 14px;
+    font-size: 13px;
+  }
+}
+
+/* ── Touch devices: flip on tap instead of hover ─── */
+@media (hover: none) and (pointer: coarse) {
+  .card:hover .card-inner {
+    transform: none;
+  }
+
+  .card {
+    cursor: pointer;
+  }
+
+  .card.flipped .card-inner {
+    transform: rotateY(180deg);
+  }
+}
+
